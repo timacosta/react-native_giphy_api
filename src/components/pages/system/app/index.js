@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <Stack key="root">
-          <Scene key="Home" component={Home}></Scene>
+          <Scene key="Home" component={Home} hideNavBar initial ></Scene>
         </Stack>
       </Router>
     );
