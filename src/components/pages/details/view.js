@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import {SafeAreaView, FlatList, StatusBar, RefreshControl,Text, Button} from 'react-native'
+import {SafeAreaView, FlatList, StatusBar, RefreshControl,Text} from 'react-native'
 import {Actions} from 'react-native-router-flux'
 
 import styles from './styles'
 
 
-class Home extends Component {
+class Details extends Component {
     constructor(props) {
         super(props);
     }
@@ -19,10 +19,8 @@ class Home extends Component {
             <>
             <StatusBar barStyle={'light-content'} />
             <SafeAreaView style={styles.container}>
-                <Button
-                title={'GO TO DETAILS'}
-                color="blue"
-                onPress={() => Actions.push('Details', {title: 'DETAILS'})}
+                <FlatList
+                contentContainerStyle={styles.contentContainer}
                 />
             </SafeAreaView>
             </>
@@ -30,4 +28,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Details;

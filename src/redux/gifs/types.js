@@ -1,0 +1,3 @@
+export const UPDATE_GIFS_LIST = '@gifs/UPDATE_GIFS_LIST'
+export const UPDATE_GIFS_LOADING = '@gifs/UPDATE_GIFS_LOADING';
+export const UPDATE_GIFS_ITEM = '@gifs/UPDATE_GIFS_ITEM';
