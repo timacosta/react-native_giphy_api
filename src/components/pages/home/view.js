@@ -9,9 +9,16 @@ import styles from './styles'
 class Home extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            gifsList: [],
+        }
     }
 
     componentDidMount = () => {
+    }
+
+    onGifPressed = gif => {
+        this.props
     }
 
     render() {
