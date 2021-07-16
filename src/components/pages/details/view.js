@@ -8,6 +8,7 @@ import styles from './styles'
 
 class Details extends Component {
     constructor(props) {
+        console.log("Details")
         super(props);
     }
 

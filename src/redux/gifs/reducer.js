@@ -9,8 +9,21 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
         case types.UPDATE_GIFS_LIST:
-            const newState = {...state, list: action.payload?.list};
+            return {
+                ...state, 
+                list: action.payload?.list,
+            };
             return newState;
+        case types.UPDATE_GIFS_LOADING:
+            return {
+                ...state, 
+                loading: action.payload?.loading,
+            };
+        case types.UPDATE_GIFS_ITEM:
+            return {
+                ...state,
+                item: action.payload?.item,
+            };
 
         default:
             return state;

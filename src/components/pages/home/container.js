@@ -24,10 +24,14 @@ const mapDispatchToProps = dispatch => {
     */
    const objectWithFunctionsToDispatchActions = {
        initList: () => {
-           dispatch()
-       }
-   }
-}
+           dispatch(gifActions.getList());
+       },
+       setItem: value => {
+           dispatch(gifActions.setItem(value))
+        },
+   };
+   return objectWithFunctionsToDispatchActions;
+};
 
 
 

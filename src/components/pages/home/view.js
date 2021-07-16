@@ -8,17 +8,17 @@ import styles from './styles'
 
 class Home extends Component {
     constructor(props) {
+        console.log("Home")
         super(props);
-        this.state = {
-            gifsList: [],
-        }
     }
 
     componentDidMount = () => {
+        console.log("componenDidMount")
+        this.props
     }
 
     onGifPressed = gif => {
-        this.props
+        this.props.setItem(gif);
     }
 
     render() {
@@ -26,6 +26,11 @@ class Home extends Component {
             <>
             <StatusBar barStyle={'light-content'} />
             <SafeAreaView style={styles.container}>
+                <FlatList contentContainerStyle={styles.contentContainer}
+                data={this.props.list}
+                keyExtractor={item => `test`}>
+
+                </FlatList>
                 <Button
                 title={'GO TO DETAILS'}
                 color="blue"
