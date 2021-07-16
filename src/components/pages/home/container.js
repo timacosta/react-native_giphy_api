@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => {
     */
    const objectWithFunctionsToDispatchActions = {
        initList: () => {
-           dispatch(gifActions.)
+           dispatch()
        }
    }
 }
