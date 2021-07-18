@@ -13,7 +13,6 @@ const reducer = (state = initialState, action = {}) => {
                 ...state, 
                 list: action.payload?.list,
             };
-            return newState;
         case types.UPDATE_GIFS_LOADING:
             return {
                 ...state, 

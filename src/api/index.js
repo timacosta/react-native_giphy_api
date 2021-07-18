@@ -10,8 +10,10 @@ const axiosInstance = axios.create({
 });
 
 export const getTrendGifs = () => {
-    const limit = 24
-    const offset = 100
-    const url = `/trending?${APIKEY}&limit=${limit}&offset=${offset}`
+    const url = `/trending?api-key=${APIKEY}`
+    
+    console.log(url)
     return axiosInstance.get(url)
 }
+
+

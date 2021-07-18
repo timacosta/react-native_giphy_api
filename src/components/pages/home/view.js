@@ -1,24 +1,22 @@
 import React, {Component} from 'react';
-
 import {SafeAreaView, FlatList, StatusBar, RefreshControl,Text, Button} from 'react-native'
 import {Actions} from 'react-native-router-flux'
-
 import styles from './styles'
 
 
 class Home extends Component {
     constructor(props) {
-        console.log("Home")
         super(props);
     }
 
     componentDidMount = () => {
-        console.log("componenDidMount")
-        this.props
-    }
+        console.log(this.props);
+        this.props.initList();
+      };
 
-    onGifPressed = gif => {
+    onGifPress = gif => {
         this.props.setItem(gif);
+        Actions.push('Details', {title: gif.title});
     }
 
     render() {
@@ -28,9 +26,14 @@ class Home extends Component {
             <SafeAreaView style={styles.container}>
                 <FlatList contentContainerStyle={styles.contentContainer}
                 data={this.props.list}
-                keyExtractor={item => `test`}>
-
-                </FlatList>
+                keyExtractor={item => `test`}
+                refreshControl={
+                <RefreshControl 
+                refreshing={this.props.refreshing} 
+                onRefresh={this.props.initList} 
+                />
+            }
+                />
                 <Button
                 title={'GO TO DETAILS'}
                 color="blue"

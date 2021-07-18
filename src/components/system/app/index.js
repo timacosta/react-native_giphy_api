@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {Router, Stack, Scene, Actions} from 'react-native-router-flux'
 import {Provider} from 'react-redux'
 
-import Home from '../../home/view';
-import Details from '../../details/view';
-import store from '../../../../config/redux';
-
+import Home from '../../pages/home';
+import Details from '../../pages/details';
+import store from '../../../config/redux';
 
 
 
@@ -26,3 +25,4 @@ class App extends Component {
 };
 
 export default App;
+

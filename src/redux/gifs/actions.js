@@ -4,12 +4,10 @@ import * as types from './types';
 import * as api from '../../api';
 
 
-
-
 export const setLoading = (loading = false) => {
     const action = {
         type: types.UPDATE_GIFS_LOADING,
-        payload: {loading: loading},
+        payload: {loading},
     };
     
     return action;
@@ -36,13 +34,14 @@ export const getList = () => {
     return async (dispatch, getState) => {
         try{
             dispatch(setLoading(true));
-            const getGifsResponse = await api.getTrendGifs();
-            const list = getGifsResponse.data.records || [];
-            const actionGenerated = setList(list);
-            dispatch(actionGenerated)
+            const response = await api.getTrendGifs();
+            const list = response.data.records || [];
+            dispatch(setList(list))
         } catch(e) { 
             Alert.alert('Error', e.message || 'An error ocurred')
+        } finally {
+            dispatch(setLoading(false));
         } 
     };
-}
+};
 

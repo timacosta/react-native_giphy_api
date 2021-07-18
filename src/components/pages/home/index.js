@@ -1,3 +1,2 @@
-import Component from './view'
+import Component from './container';
 export default Component;
-
