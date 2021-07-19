@@ -1,9 +1,9 @@
 import * as requests from './index'
 
 
-describe('api call test'), () => {
-    test('getGifs ', () => {
-        
+//test api index.js file get route
+describe('api index.js', () => {
+    it('should return a function', () => {
+        expect(typeof requests.getTrendGifs).toBe('function')
     })
-    
-}
+})

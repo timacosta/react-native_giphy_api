@@ -3,6 +3,8 @@ import {SafeAreaView, FlatList, StatusBar, RefreshControl,Text, Button} from 're
 import {Actions} from 'react-native-router-flux'
 import styles from './styles'
 
+import GifCard from '../../molecules/card-gif/view';
+
 
 class Home extends Component {
     constructor(props) {
@@ -26,19 +28,22 @@ class Home extends Component {
             <SafeAreaView style={styles.container}>
                 <FlatList contentContainerStyle={styles.contentContainer}
                 data={this.props.list}
-                keyExtractor={item => `test`}
+                keyExtractor={item => `gif-card-${item.id}`}
                 refreshControl={
                 <RefreshControl 
                 refreshing={this.props.refreshing} 
                 onRefresh={this.props.initList} 
                 />
             }
+            renderItem={({item}) => (
+                <GifCard
+                gif={item}
+                onGifPress={gif => this.onGifPress(gif)}
                 />
-                <Button
-                title={'GO TO DETAILS'}
-                color="blue"
-                onPress={() => Actions.push('Details', {title: 'DETAILS'})}
-                />
+            )}
+            numColumns={2}
+            />
+            <Button title="Button"/>
             </SafeAreaView>
             </>
         );

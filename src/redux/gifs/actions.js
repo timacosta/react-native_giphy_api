@@ -2,6 +2,7 @@ import {Alert} from 'react-native';
 
 import * as types from './types';
 import * as api from '../../api';
+import colors from '../../assets/colors';
 
 
 export const setLoading = (loading = false) => {
@@ -31,11 +32,11 @@ export const setItem = item => {
 }
 
 export const getList = () => {
-    return async (dispatch, getState) => {
+    return async (dispatch) => {
         try{
             dispatch(setLoading(true));
             const response = await api.getTrendGifs();
-            const list = response.data.records || [];
+            const list = response.data?.results || [];
             dispatch(setList(list))
         } catch(e) { 
             Alert.alert('Error', e.message || 'An error ocurred')

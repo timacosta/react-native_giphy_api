@@ -13,10 +13,23 @@ class GifCard extends Component {
             <Image
                 style={styles.image}
                 source={{uri: this.props.gif?.url}}
-            
             />
+            <View style={styles.infoContainer}>
+                <Text style={styles.title}>{this.props.gif?.title || ''}</Text>
+            </View>
             </TouchableOpacity>
         );
     }
-
 }
+
+GifCard.defaultProps = {
+    gif: {},
+    onPress: () => {},
+}
+
+GifCard.propTypes = {
+    gif: PropTypes.object,
+    onPress: PropTypes.func,
+};
+
+export default GifCard;
