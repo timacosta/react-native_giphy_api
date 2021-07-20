@@ -6,13 +6,16 @@ import styles from './styles';
 class GifCard extends Component {
     //render function
     render() {
+        const source = this.props.gif.images.original.url;
+
         return (
             <TouchableOpacity
                 style={styles.card}
                 onPress={() => this.props.onPress(this.props.gif)}>
             <Image
+                resizeMode='contain'
                 style={styles.image}
-                source={{uri: this.props.gif?.url}}
+                source={{uri: source}}
             />
             <View style={styles.infoContainer}>
                 <Text style={styles.title}>{this.props.gif?.title || ''}</Text>

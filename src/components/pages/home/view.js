@@ -12,7 +12,7 @@ class Home extends Component {
     }
 
     componentDidMount = () => {
-        console.log(this.props.initList);
+        console.log(this.props);
         this.props.initList();
       };
 
@@ -26,7 +26,7 @@ class Home extends Component {
             <>
             <StatusBar barStyle={'light-content'} />
             <SafeAreaView style={styles.container}>
-                <FlatList contentContainerStyle={styles.contentContainer}
+            <FlatList contentContainerStyle={styles.contentContainer}
                 data={this.props.list}
                 keyExtractor={item => `gif-card-${item.id}`}
                 refreshControl={

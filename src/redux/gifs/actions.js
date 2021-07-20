@@ -35,9 +35,9 @@ export const getList = () => {
     return async (dispatch) => {
         try{
             dispatch(setLoading(true));
-            console.log(api.getTrendGifs());
             const response = await api.getTrendGifs();
-            const list = response.data?.results || [];
+            console.log(response.data.data);
+            const list = response.data?.data || [];
             dispatch(setList(list))
         } catch(e) { 
             console.log(e);
