@@ -43,7 +43,6 @@ class Home extends Component {
             )}
             numColumns={1}
             />
-            <Button title="Button"/>
             </SafeAreaView>
             </>
         );
