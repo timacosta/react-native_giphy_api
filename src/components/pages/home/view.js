@@ -41,7 +41,7 @@ class Home extends Component {
                 onGifPress={gif => this.onGifPress(gif)}
                 />
             )}
-            numColumns={2}
+            numColumns={1}
             />
             <Button title="Button"/>
             </SafeAreaView>
