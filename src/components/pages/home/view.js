@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView, FlatList, StatusBar, RefreshControl,Text, Button} from 'react-native'
+import {SafeAreaView, FlatList, StatusBar, RefreshControl} from 'react-native'
 import {Actions} from 'react-native-router-flux'
 import styles from './styles'
 
@@ -31,8 +31,10 @@ class Home extends Component {
                 keyExtractor={item => `gif-card-${item.id}`}
                 refreshControl={
                 <RefreshControl 
-                refreshing={this.props.refreshing} 
+                refreshing={this.props.loading} 
                 onRefresh={this.props.initList} 
+                colors={['#ff0000', '#00ff00', '#0000ff']}
+                tintColor={"#ffffff"}
                 />
             }
             renderItem={({item}) => (
