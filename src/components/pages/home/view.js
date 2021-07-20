@@ -3,7 +3,7 @@ import {SafeAreaView, FlatList, StatusBar, RefreshControl} from 'react-native'
 import {Actions} from 'react-native-router-flux'
 import styles from './styles'
 
-import GifCard from '../../molecules/card-gif/view';
+import GifCard from '../../molecules/card-gif';
 
 
 class Home extends Component {
@@ -18,7 +18,7 @@ class Home extends Component {
 
     onGifPress = gif => {
         this.props.setItem(gif);
-        Actions.push('Details', {title: gif.title});
+        Actions.push('Details', {title: gif?.title || ''});
     }
 
     render() {
@@ -33,14 +33,14 @@ class Home extends Component {
                 <RefreshControl 
                 refreshing={this.props.loading} 
                 onRefresh={this.props.initList} 
-                colors={['#ff0000', '#00ff00', '#0000ff']}
-                tintColor={"#ffffff"}
+                colors={['white']}
+                tintColor={'white'}
                 />
             }
             renderItem={({item}) => (
                 <GifCard
                 gif={item}
-                onGifPress={gif => this.onGifPress(gif)}
+                onPress={gif => this.onGifPress(gif)}
                 />
             )}
             numColumns={1}
