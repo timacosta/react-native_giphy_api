@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
     },
     image: {width: '100%',height: 200,resizeMode: 'cover'},
     infoContainer: {flexDirection: 'row', padding: 20},
-    title: {fontSize: 16, fontWeight: 'bold', color: colors.white, flex: 1},
+    title: {fontSize: 16, fontWeight: 'bold', color: colors.white, flex: 1, textAlign: 'center'},
+        
 })
 
 export default styles;
