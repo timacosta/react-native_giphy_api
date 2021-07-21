@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import Component from './view';
 
 const mapStateToProps = state => {
-    console.log(state.gifs.item)
+    console.log("mapStateToProps item: ",state.gifs.item)
     return {
         details: state.gifs.item
     };
