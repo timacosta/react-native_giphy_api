@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {SafeAreaView, FlatList, StatusBar, RefreshControl,Text, ScrollView, Image} from 'react-native'
+import {SafeAreaView, View, FlatList, StatusBar, RefreshControl,Text, ScrollView, Image} from 'react-native'
 import {Actions} from 'react-native-router-flux'
 import colors from '../../../assets/colors';
 import DetailCard from '../../molecules/card-details';
@@ -30,8 +30,8 @@ class Details extends Component {
 
     render() {
         const {aspectRatio} = this.state;
-        const {gifURI} = this.props.details.images.original.url;
-        console.log('imageURLProps', gifURI);
+        const gif = this.props;
+        console.log('imageURLProps', gif);
         console.log('state', this.state);
         return(
             <>
@@ -40,13 +40,30 @@ class Details extends Component {
             <ScrollView> 
             {aspectRatio ? (
                 <Image
-                     source={{uri: gifURI}} 
+                     source={{uri: gif.details?.images.original.url}} 
                      style={[styles.image, {aspectRatio}]}>
                 </Image>
             ) : null}
+
+            <LabelValueBlock label={'Name: '} value={gif.details.title} />
+            <LabelValueBlock label={'Type: '} value={gif.details.type} />
+            <LabelValueBlock label={'URL: '} value={gif.details.source} />
+            <LabelValueBlock label={'Trend since: '} value={gif.details.trending_datetime} />
+
             </ScrollView>
             </SafeAreaView>
             </>
+        );
+    }
+}
+
+class LabelValueBlock extends Component {
+    render() {
+        return(
+            <View style={styles.row}>
+                <Text style={styles.label}>{this.props.label || ''}</Text>
+                <Text style={styles.value}>{this.props.value || ''}</Text>
+            </View>
         );
     }
 }
