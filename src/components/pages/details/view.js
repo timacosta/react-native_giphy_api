@@ -21,8 +21,8 @@ class Details extends Component {
     }
 
     getImageAspectRatio = async () => {
-        if(this.props.gif?.images.original.url) {
-            Image.getSize(this.props.gif.images.original.url, (width, height) => {
+        if(this.props.details?.images.original.url) {
+            Image.getSize(this.props.details.images.original.url, (width, height) => {
                 this.setState({aspectRatio: width / height})
             });
         }
@@ -30,16 +30,13 @@ class Details extends Component {
 
     render() {
         const {aspectRatio} = this.state;
-        const gifURI = this.props.details.images.original.url;
+        const {gifURI} = this.props.details.images.original.url;
         console.log('imageURLProps', gifURI);
         console.log('state', this.state);
         return(
             <>
             <StatusBar barStyle={'light-content'} />
             <SafeAreaView style={styles.container}>
-            <Image 
-            style={styles.image}
-            source={{uri: gifURI}} />
             <ScrollView> 
             {aspectRatio ? (
                 <Image
