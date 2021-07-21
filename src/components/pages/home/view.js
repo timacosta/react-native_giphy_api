@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {SafeAreaView, FlatList, StatusBar, RefreshControl} from 'react-native'
+import {SafeAreaView, FlatList, StatusBar, RefreshControl, FloatingButton} from 'react-native'
 import {Actions} from 'react-native-router-flux'
 import styles from './styles'
 
 import GifCard from '../../molecules/card-gif';
+import FloationActionButton from '../../atoms/floating_button';
 
 
 class Home extends Component {
@@ -44,6 +45,7 @@ class Home extends Component {
             )}
             numColumns={1}
             />
+            <FloationActionButton/>
             </SafeAreaView>
             </>
         );
