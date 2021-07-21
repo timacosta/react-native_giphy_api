@@ -6,6 +6,11 @@ import Home from '../../pages/home';
 import Details from '../../pages/details';
 import store from '../../../config/redux';
 
+const navBarProps = {
+  backTitle: 'Gifs',
+  backTitleEnabled: true,
+  back: true,
+}
 
 
 class App extends Component {
@@ -15,7 +20,7 @@ class App extends Component {
         <Router>
         <Stack key="root">
           <Scene key="Home" component={Home} hideNavBar initial ></Scene>
-          <Scene key="Details" component={Details}/>
+          <Scene key="Details" component={Details} {...navBarProps}/>
         </Stack>
       </Router>
       </Provider>

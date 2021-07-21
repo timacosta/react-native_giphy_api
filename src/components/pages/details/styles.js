@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 300,
+    height: undefined,
     resizeMode: 'cover',
   },
   row: {flexDirection: 'row', paddingVertical: 20, paddingHorizontal: 20},
@@ -19,9 +19,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     flex: 1,
     textAlign: 'right',
-  },
-  edit: {
-    marginVertical: 40,
   },
 });
 

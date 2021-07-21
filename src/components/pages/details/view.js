@@ -68,4 +68,9 @@ class LabelValueBlock extends Component {
     }
 }
 
+Details.defaultProps = {
+    details: {},
+    onPress: () => {},
+}
+
 export default Details;
