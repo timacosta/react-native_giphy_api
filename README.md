@@ -6,7 +6,7 @@
 
 ## Description
 
-Little mobile client for Android and iOS, created using React native that consumes [Giphy API](https://developers.giphy.com/docs/api/), showing a list of trending gifs and some details. 
+App for Android and iOS, created using React native that consumes [Giphy API](https://developers.giphy.com/docs/api/), showing a list of trending gifs and some details. 
 
 ## Implementations
 
