@@ -5,12 +5,13 @@ import Component from './view';
 const mapStateToProps = (state) => {
     return {
         loading: state.gifs.loading,
+        mockGif: state.gifs.mockGif,
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-      onSubmit: data => dispatch(gifActions.createGif(data)),
+      onSubmit: mockGif => dispatch(gifActions.createGif(mockGif)),
     };
   };
 

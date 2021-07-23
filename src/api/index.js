@@ -13,13 +13,17 @@ export const getTrendGifs = () => {
     return axiosInstance.get(url)
 }
 
-
-
-
-
-
-
-    
-
-
-
+//MOCK Method to create a gif
+export const createGif = (params) => {
+    console.log("params",params);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const mockGif = {
+                title: params.title,
+                image: params.image,
+        };
+        console.log("mockGif",mockGif)
+        resolve(mockGif);
+    }, 2500)
+    })
+}

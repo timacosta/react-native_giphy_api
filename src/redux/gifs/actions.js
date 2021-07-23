@@ -3,6 +3,7 @@ import {Alert} from 'react-native';
 import * as types from './types';
 import * as api from '../../api';
 import colors from '../../assets/colors';
+import { Actions } from 'react-native-router-flux';
 
 
 export const setLoading = (loading = false) => {
@@ -36,7 +37,6 @@ export const getList = () => {
         try{
             dispatch(setLoading(true));
             const response = await api.getTrendGifs();
-            console.log(response.data.data);
             const list = response.data?.data || [];
             dispatch(setList(list))
         } catch(e) { 
@@ -49,16 +49,29 @@ export const getList = () => {
 
 };
 
-export const createGif = (gif) => {
+export const createGif = formData => {
     return async (dispatch, getState) => {
         try{
-            const response = await api.createGif(gif);
-            console.log(response.data);
-            dispatch(setItem(response.data));
+            //const gif = getState().gifs.item
+            //if(!gif || !formData) {
+                //return;
+            //}
+
+            const {list} = getState().gifs;
+
+            dispatch(setLoading(true));
+            const data = {...formData}
+            const mockGif =  await api.createGif(data);
+            dispatch(setList([...[mockGif], ...list]))
+            dispatch(getList())
+            Actions.pop()
+            Alert.alert('Success', 'Gif created')
         } catch(e) { 
             console.log(e);
             Alert.alert('Error', e.message || 'An error occurred')
         }
     };
 }
+
+
 

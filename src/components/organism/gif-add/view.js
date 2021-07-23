@@ -4,20 +4,25 @@ import {KeyboardAvoidingScrollView} from 'react-native-keyboard-avoiding-scroll-
 import {launchImageLibrary} from 'react-native-image-picker';
 import Input from '../../atoms/input';
 import styles from './styles';
+import colors from '../../../assets/colors';
 
 class GifAdd extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {
+        image: null,
+        title: '',
         errors: {},
         };
+        console.log(this.state)
+        console.log(this.state.errors)
     }
 
     onSubmit = () => {
         const valid = this.validateForm();
         if(!valid) {
             return;
+        
         }
 
         const {image, title} = this.state;
@@ -25,6 +30,7 @@ class GifAdd extends Component {
             image: image.base64 ? `data:image/jpeg;base64,${image?.base64}` : null,
             title: title,
         }
+        console.log("data",data),
         this.props.onSubmit(data);
     };
 
@@ -86,7 +92,21 @@ class GifAdd extends Component {
                 </View>
             </KeyboardAvoidingScrollView>
 
-            <Input></Input>
+            <Input
+                style={styles.input}
+                label="Title"
+                placeholder="Enter title"
+                value={title}
+                onChangeText={text => this.setState({title: text})}
+                error={errors?.title}
+                keyboardType="default"
+            />
+
+            <Button
+            title="Submit"
+            onPress={this.onSubmit}
+        
+            />
 
             </SafeAreaView>
         )
