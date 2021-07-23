@@ -14,8 +14,7 @@ class GifAdd extends Component {
         title: '',
         errors: {},
         };
-        console.log(this.state)
-        console.log(this.state.errors)
+        console.log(this.props.gif)
     }
 
     onSubmit = () => {

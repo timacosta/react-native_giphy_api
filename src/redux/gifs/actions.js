@@ -38,6 +38,7 @@ export const getList = () => {
             dispatch(setLoading(true));
             const response = await api.getTrendGifs();
             const list = response.data?.data || [];
+            console.log("listDuringGet",list);
             dispatch(setList(list))
         } catch(e) { 
             console.log(e);
@@ -49,21 +50,19 @@ export const getList = () => {
 
 };
 
+
+
+
 export const createGif = formData => {
     return async (dispatch, getState) => {
         try{
-            //const gif = getState().gifs.item
-            //if(!gif || !formData) {
-                //return;
-            //}
-
+           
             const {list} = getState().gifs;
 
             dispatch(setLoading(true));
             const data = {...formData}
             const mockGif =  await api.createGif(data);
             dispatch(setList([...[mockGif], ...list]))
-            dispatch(getList())
             Actions.pop()
             Alert.alert('Success', 'Gif created')
         } catch(e) { 

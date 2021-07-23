@@ -20,10 +20,13 @@ export const createGif = (params) => {
         setTimeout(() => {
             const mockGif = {
                 title: params.title,
-                image: params.image,
+                images: {
+                    original: {
+                        url: params.image,
+                    }
+                }
         };
-        console.log("mockGif",mockGif)
         resolve(mockGif);
-    }, 2500)
+    }, 2500);
     })
 }
