@@ -46,5 +46,19 @@ export const getList = () => {
             dispatch(setLoading(false));
         } 
     };
+
 };
+
+export const createGif = (gif) => {
+    return async (dispatch, getState) => {
+        try{
+            const response = await api.createGif(gif);
+            console.log(response.data);
+            dispatch(setItem(response.data));
+        } catch(e) { 
+            console.log(e);
+            Alert.alert('Error', e.message || 'An error occurred')
+        }
+    };
+}
 

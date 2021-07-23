@@ -5,6 +5,7 @@ import styles from './styles'
 
 import GifCard from '../../molecules/card-gif';
 import FloationActionButton from '../../atoms/floating_button';
+import GifAdd from '../../organism/gif-add';
 
 
 class Home extends Component {
@@ -45,7 +46,9 @@ class Home extends Component {
             )}
             numColumns={1}
             />
-            <FloationActionButton/>
+            <FloationActionButton
+                onPress={() => Actions.push('GifAdd')}
+            />
             </SafeAreaView>
             </>
         );

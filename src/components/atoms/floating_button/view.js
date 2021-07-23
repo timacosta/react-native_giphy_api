@@ -15,14 +15,16 @@ class FloationActionButton extends Component {
                     <Image
                     source={require('../../../assets/images/plus.png')}
                     style={styles.image}
-                     />
-                    
-                  
+                     /> 
                 </View>
             </TouchableOpacity>
         );
     }
 
+}
+
+FloationActionButton.defaultProps = {
+    onPress: () => {},
 }
 
 export default FloationActionButton;
