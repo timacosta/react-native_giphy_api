@@ -19,6 +19,7 @@ export const createGif = (params) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const mockGif = {
+                id: params.id=Math.random().toString(36).substring(7),
                 title: params.title,
                 images: {
                     original: {
