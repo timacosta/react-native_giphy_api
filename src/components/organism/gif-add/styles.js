@@ -27,7 +27,7 @@ export default StyleSheet.create({
     borderRadius: 8,
   },
   imageButtonLabel: {
-    color: colors.navBar,
+    color: colors.white,
     fontSize: 16,
   },
   image: {
