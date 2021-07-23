@@ -8,7 +8,7 @@
 
 App for Android and iOS, created using React native that consumes [Giphy API](https://developers.giphy.com/docs/api/), showing a list of trending gifs and some details. 
 
-<img src="https://github.com/timacosta/react-native_giphy_api/github_gifs/gif_home.gif" width="200" /> |  <img src="https://github.com/timacosta/react-native_giphy_api/github_gifs/gif_add.gif" width="200" /> |
+<img src="https://github.com/timacosta/react-native_giphy_api/blob/main/github_gifs/gif_home.gif" width="200" /> |  <img src="https://github.com/timacosta/react-native_giphy_api/blob/main/github_gifs/gif_add.gif" width="200" /> |
 
 ## Implementations
 
