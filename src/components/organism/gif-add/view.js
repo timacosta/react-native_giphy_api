@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {SafeAreaView, View, Text, Image, TouchableOpacity, Button} from 'react-native';
 import {KeyboardAvoidingScrollView} from 'react-native-keyboard-avoiding-scroll-view';
 import {launchImageLibrary} from 'react-native-image-picker';
-import Input from '../../atoms/floating_button';
+import Input from '../../atoms/input';
 import styles from './styles';
 
 class GifAdd extends Component {
@@ -85,6 +85,8 @@ class GifAdd extends Component {
                     ) : null}
                 </View>
             </KeyboardAvoidingScrollView>
+
+            <Input></Input>
 
             </SafeAreaView>
         )
