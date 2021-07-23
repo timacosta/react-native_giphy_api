@@ -77,11 +77,11 @@ class GifAdd extends Component {
                             <Image style={styles.image} source={{uri: image.uri}}/>
                         ) : null}
                         <View>
-                        <Text style={styles.imageButtonLabel}>Seleccionar Imagen</Text>
+                        <Text style={styles.imageButtonLabel}>Choose an image</Text>
                         </View>
                     </TouchableOpacity>
                     {errors?.image ? (
-                        <Text style={styles.error}>{'Seleccione una image'}</Text>
+                        <Text style={styles.error}>{'Choose an image'}</Text>
                     ) : null}
                 </View>
             </KeyboardAvoidingScrollView>

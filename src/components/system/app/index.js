@@ -22,7 +22,7 @@ class App extends Component {
         <Stack key="root">
           <Scene key="Home" component={Home} hideNavBar initial />
           <Scene key="Details" component={Details} {...navBarProps}/>
-          <Scene key="GifAdd" component={GifAdd} {...navBarProps}/>
+          <Scene key="GifAdd" component={GifAdd} title="Add new gif" {...navBarProps}/>
         </Stack>
       </Router>
       </Provider>
