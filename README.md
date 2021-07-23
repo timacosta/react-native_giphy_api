@@ -8,6 +8,8 @@
 
 App for Android and iOS, created using React native that consumes [Giphy API](https://developers.giphy.com/docs/api/), showing a list of trending gifs and some details. 
 
+<img src="" width="200" /> |  <img src="" width="200" /> |
+
 ## Implementations
 
 [React Native](https://reactnative.dev/) app based on ([React](https://es.reactjs.org/), using Atomic design as pattern and including the following libraries:
